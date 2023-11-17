@@ -6,13 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import {Counter} from "./Counter";
 import {Counters} from "./Counters";
 import {RatingBar} from "./RatingBar";
+import {Products} from "./Products";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <>
-    <RatingBar  rate={2} readonly={false}/>
-    <RatingBar count={5} rate={3} />
-    <RatingBar count={5}  readonly={false}/>
+    <Products/>
 </>
 );
 
