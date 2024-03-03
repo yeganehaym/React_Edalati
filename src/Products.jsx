@@ -6,6 +6,9 @@ import WorldMap from "react-svg-worldmap";
 
 export class Products extends Component{
 
+
+
+
     state={
         page:1,
         pageSize:3,

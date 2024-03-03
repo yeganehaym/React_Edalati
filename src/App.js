@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function App() {
+
+  const navigate=useNavigate()
+
+  const counters=()=>{
+    navigate('/counters',{replace:true})
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <ul>
+        <li>
+          <Link to={"/products"}>Products</Link>
+        </li>
+        <li>
+          <Link to={"/products2"}>Products2</Link>
+        </li>
+        <li>
+          <Link to={"/counters"}>Counters</Link>
+        </li>
+      </ul>
+
+
+      <button className={"btn btn-primary"} onClick={counters}>Go to Counters</button>
+
     </div>
   );
 }
