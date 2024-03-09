@@ -11,18 +11,17 @@ import {Products2} from "./Products2";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Template} from "./Template";
 import Paramter from "./Paramter";
+import {UserTemplate} from "./Components/Templates/UserTemplate";
+import {NoteList} from "./NoteList";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <>
 <BrowserRouter>
     <Routes>
-        <Route path={"/"} element={<App/>} />
-        <Route path={"/products"} element={<Template><Products/></Template>} />
-        <Route path={"/products2"} element={<Template><Products2/></Template>} />
-        <Route path={"/counters"} element={<Template><Counters/></Template>} />
-        <Route path={"/p/:id/:year"} element={<Template><Paramter/></Template>} />
-        <Route path={"/p/:id/:year/:month"} element={<Template><Paramter/></Template>} />
+        <Route path={"/"} element={<UserTemplate><NoteList/></UserTemplate>} />
+        <Route path={"/admin"} element={<Template><NoteList/></Template>} />
+
     </Routes>
 </BrowserRouter>
 </>
