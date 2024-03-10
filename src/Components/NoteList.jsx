@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {NoteItem} from "./Components/Shared/NoteItem";
+import {NoteItem} from "./Shared/NoteItem";
 import axios from "axios";
-import * as noteService from "./Services/NoteService";
+import * as noteService from "../Services/NoteService";
 
 export const NoteList=()=>{
 
@@ -73,12 +73,12 @@ export const NoteList=()=>{
 
                 <div className="col-lg-4 col-md-6">
             {
-                notes.length>0 &&
+                notes && notes.length>0 &&
                 notes.map(note=><NoteItem key={note.id} note={note} />)
             }
 
                     {
-                        notes.length==0 &&
+                        !notes || notes.length==0 &&
                         <span>No Data</span>
                     }
                 </div>

@@ -1,11 +1,10 @@
-import axios from "axios";
-
+import http from "./HttpService";
 
 export const getNotesFromService=async ()=>{
-    try {
-        const result=await axios.get('http://localhost:5140/notes',{
 
-        });
+    try {
+        const result=await http.get('notes');
+
         return result.data;
     }
     catch (ex)
@@ -15,6 +14,6 @@ export const getNotesFromService=async ()=>{
 }
 
 export const newNote=async note=>{
-    const result=await axios.post('http://localhost:5140/postNote',note);
+    const result=await http.post('newnote',note);
     return result.data;
 }

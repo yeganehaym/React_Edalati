@@ -12,7 +12,11 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Template} from "./Template";
 import Paramter from "./Paramter";
 import {UserTemplate} from "./Components/Templates/UserTemplate";
-import {NoteList} from "./NoteList";
+import {NoteList} from "./Components/NoteList";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {NewNote} from "./Components/NewNote";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,9 +25,12 @@ root.render(
     <Routes>
         <Route path={"/"} element={<UserTemplate><NoteList/></UserTemplate>} />
         <Route path={"/admin"} element={<Template><NoteList/></Template>} />
+        <Route path={"/new"} element={<UserTemplate><NewNote/></UserTemplate>} />
 
     </Routes>
 </BrowserRouter>
+
+    <ToastContainer />
 </>
 );
 
