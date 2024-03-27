@@ -20,7 +20,7 @@ client.interceptors.response.use(response=>{
 
 })
 
-const jwt='123';
+const jwt=localStorage.getItem('token');
 client.defaults.headers.common["Authorization"] = "Bearer " + jwt;
 
 export default {
